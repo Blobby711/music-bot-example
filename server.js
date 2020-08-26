@@ -10,6 +10,20 @@ const client = new discord.Client({disableMentions:"everyone"})
 const db = new Map()
 const fs = require("fs")
 const snek = require("node-superfetch")
+//Uptime
+const { get } = require("snekfetch");
+const http = require("http");
+const express = require("express");
+const app = express();
+app.get("/", (request, response) => {
+  console.log("Pinging");
+  response.sendStatus(200);
+})
+app.listen(process.env.PORT);
+setInterval(() => {
+
+http.get(`http://${process.env.PROJECT_DOMAIN}.glitch.me/`);
+}, 280000);
 
 const { prefix } = require("./config.json")
 client.aliases = new discord.Collection();
