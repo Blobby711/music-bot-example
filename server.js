@@ -22,7 +22,7 @@ app.get("/", (request, response) => {
 app.listen(process.env.PORT);
 setInterval(() => {
 
-http.get(`http://${process.env.PROJECT_DOMAIN}.glitch.me/`);
+http.get(`https://creative-picayune-mind.glitch.me`);
 }, 280000);
 
 const { prefix } = require("./config.json")
